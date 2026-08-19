@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "nav2_msgs/srv/ClearCostmapAroundRobot_Response",
+      "fields": [
+        {
+          "name": "success",
+          "type": {
+            "type_id": 15,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "nav2_msgs/srv/ClearCostmapAroundRobot_Response",
+      "hash_string": "RIHS01_81dca16a2b326650a3c70bc6a86b2d5ae4977a03472b0fae6e64b2f9b13d2c14"
+    }
+  ]
+}

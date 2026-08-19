@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_terrain_node_FILE /home/vujade17171/prj/FAST_LIO_NAV/workspaces/ws_livox/build/terrain_node/terrain_node)
+set(__QT_DEPLOY_TARGET_terrain_node_TYPE EXECUTABLE)

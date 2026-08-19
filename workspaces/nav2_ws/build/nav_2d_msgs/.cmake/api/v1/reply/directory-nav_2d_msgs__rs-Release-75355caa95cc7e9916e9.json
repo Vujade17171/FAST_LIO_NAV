@@ -1,0 +1,19 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 9
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "nav_2d_msgs__rs",
+		"source" : "/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/build/nav_2d_msgs/nav_2d_msgs__rs"
+	}
+}

@@ -1,0 +1,17 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from nav2_msgs/srv/ClearEntireCostmap.srv
+// generated code does not contain a copyright notice
+
+
+module nav2_msgs {
+  module srv {
+    @verbatim (language="comment", text=
+      "Clears all layers on the costmap")
+    struct ClearEntireCostmap_Request {
+      sequence<string> plugins;
+    };
+    struct ClearEntireCostmap_Response {
+      boolean success;
+    };
+  };
+};

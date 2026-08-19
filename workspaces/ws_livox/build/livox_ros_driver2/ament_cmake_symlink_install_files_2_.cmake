@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_files("/home/vujade17171/prj/FAST_LIO_NAV/workspaces/ws_livox/src/livox_ros_driver2" FILES "/home/vujade17171/prj/FAST_LIO_NAV/workspaces/ws_livox/build/livox_ros_driver2/rosidl_generator_type_description/livox_ros_driver2/msg/CustomMsg.json" "DESTINATION" "share/livox_ros_driver2/msg")

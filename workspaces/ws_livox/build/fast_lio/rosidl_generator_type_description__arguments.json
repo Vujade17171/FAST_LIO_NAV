@@ -1,0 +1,7 @@
+{
+  "package_name": "fast_lio",
+  "output_dir": "/home/vujade17171/prj/FAST_LIO_NAV/workspaces/ws_livox/build/fast_lio/rosidl_generator_type_description/fast_lio",
+  "idl_tuples": [
+    "/home/vujade17171/prj/FAST_LIO_NAV/workspaces/ws_livox/build/fast_lio/rosidl_adapter/fast_lio:msg/Pose6D.idl"
+  ]
+}

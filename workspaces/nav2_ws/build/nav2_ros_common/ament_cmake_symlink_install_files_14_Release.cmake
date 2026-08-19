@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_files("/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/src/navigation2/nav2_ros_common" FILES "/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/build/nav2_ros_common/ament_cmake_export_dependencies/ament_cmake_export_dependencies-extras.cmake" "DESTINATION" "share/nav2_ros_common/cmake")

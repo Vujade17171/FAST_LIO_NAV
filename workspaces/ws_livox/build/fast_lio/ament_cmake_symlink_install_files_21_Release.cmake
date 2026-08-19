@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_files("/home/vujade17171/prj/FAST_LIO_NAV/workspaces/ws_livox/src/FAST_LIO_ROS2" FILES "/home/vujade17171/prj/FAST_LIO_NAV/workspaces/ws_livox/build/fast_lio/ament_cmake_index/share/ament_index/resource_index/packages/fast_lio" "DESTINATION" "share/ament_index/resource_index/packages")

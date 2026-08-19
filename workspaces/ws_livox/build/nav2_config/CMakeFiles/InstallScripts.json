@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/vujade17171/prj/FAST_LIO_NAV/workspaces/ws_livox/build/nav2_config/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

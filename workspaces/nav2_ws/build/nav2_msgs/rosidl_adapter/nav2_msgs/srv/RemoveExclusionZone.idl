@@ -1,0 +1,26 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from nav2_msgs/srv/RemoveExclusionZone.srv
+// generated code does not contain a copyright notice
+
+
+module nav2_msgs {
+  module srv {
+    @verbatim (language="comment", text=
+      "Remove exclusion zone(s) from a collision monitor / detector source at runtime.")
+    struct RemoveExclusionZone_Request {
+      @verbatim (language="comment", text=
+        "Name of zone to remove (ignored if remove_all is true)")
+      string zone_name;
+
+      @verbatim (language="comment", text=
+        "If true, remove all zones from this source")
+      @default (value=FALSE)
+      boolean remove_all;
+    };
+    struct RemoveExclusionZone_Response {
+      boolean success;
+
+      string message;
+    };
+  };
+};

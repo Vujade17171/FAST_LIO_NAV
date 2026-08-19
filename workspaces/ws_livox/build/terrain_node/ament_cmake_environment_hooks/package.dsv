@@ -1,0 +1,5 @@
+source;share/terrain_node/local_setup.bash
+source;share/terrain_node/local_setup.dsv
+source;share/terrain_node/local_setup.fish
+source;share/terrain_node/local_setup.sh
+source;share/terrain_node/local_setup.zsh

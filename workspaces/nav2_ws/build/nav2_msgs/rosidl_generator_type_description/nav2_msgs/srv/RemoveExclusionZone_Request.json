@@ -1,0 +1,36 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "nav2_msgs/srv/RemoveExclusionZone_Request",
+      "fields": [
+        {
+          "name": "zone_name",
+          "type": {
+            "type_id": 17,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "remove_all",
+          "type": {
+            "type_id": 15,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": "False"
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "nav2_msgs/srv/RemoveExclusionZone_Request",
+      "hash_string": "RIHS01_73e0a51b67dc77dd5c59624de4616ccd61a917f4c26260b4226e7b93529d2f53"
+    }
+  ]
+}

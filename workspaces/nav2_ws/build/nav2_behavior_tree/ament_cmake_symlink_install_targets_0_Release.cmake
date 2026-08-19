@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/build/nav2_behavior_tree/generate_nav2_tree_nodes_xml" "TARGETS" "generate_nav2_tree_nodes_xml" "DESTINATION" "lib/nav2_behavior_tree")

@@ -1,0 +1,1 @@
+/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/build/nav2_bt_navigator/ament_cmake_environment_hooks/local_setup.sh

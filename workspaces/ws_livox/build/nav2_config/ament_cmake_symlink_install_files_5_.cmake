@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_files("/home/vujade17171/prj/FAST_LIO_NAV/workspaces/ws_livox/src/nav2_config" FILES "/home/vujade17171/prj/FAST_LIO_NAV/workspaces/ws_livox/build/nav2_config/ament_cmake_environment_hooks/path.dsv" "DESTINATION" "share/nav2_config/environment")

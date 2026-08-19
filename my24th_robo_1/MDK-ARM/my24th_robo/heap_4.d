@@ -1,0 +1,13 @@
+my24th_robo\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c
+my24th_robo\heap_4.o: D:\keil\ARM\ARMCC\Bin\..\include\stdlib.h
+my24th_robo\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+my24th_robo\heap_4.o: D:\keil\ARM\ARMCC\Bin\..\include\stddef.h
+my24th_robo\heap_4.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+my24th_robo\heap_4.o: ../Core/Inc/FreeRTOSConfig.h
+my24th_robo\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+my24th_robo\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+my24th_robo\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+my24th_robo\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+my24th_robo\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+my24th_robo\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+my24th_robo\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h

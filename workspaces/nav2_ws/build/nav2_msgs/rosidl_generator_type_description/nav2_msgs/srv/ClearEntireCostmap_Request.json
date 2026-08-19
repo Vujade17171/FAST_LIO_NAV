@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "nav2_msgs/srv/ClearEntireCostmap_Request",
+      "fields": [
+        {
+          "name": "plugins",
+          "type": {
+            "type_id": 161,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "nav2_msgs/srv/ClearEntireCostmap_Request",
+      "hash_string": "RIHS01_61cc07fa7635a8afa816672385117f7fe44e0a0dae93fc0204949eb82d6c67ce"
+    }
+  ]
+}

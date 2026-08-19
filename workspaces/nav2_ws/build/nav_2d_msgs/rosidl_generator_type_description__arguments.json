@@ -1,0 +1,15 @@
+{
+  "package_name": "nav_2d_msgs",
+  "output_dir": "/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/build/nav_2d_msgs/rosidl_generator_type_description/nav_2d_msgs",
+  "idl_tuples": [
+    "/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/build/nav_2d_msgs/rosidl_adapter/nav_2d_msgs:msg/Pose2D32.idl",
+    "/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/build/nav_2d_msgs/rosidl_adapter/nav_2d_msgs:msg/Twist2D.idl",
+    "/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/build/nav_2d_msgs/rosidl_adapter/nav_2d_msgs:msg/Twist2D32.idl",
+    "/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/build/nav_2d_msgs/rosidl_adapter/nav_2d_msgs:msg/Twist2DStamped.idl"
+  ],
+  "include_paths": [
+    "geometry_msgs:/opt/ros/lyrical/share/geometry_msgs/",
+    "std_msgs:/opt/ros/lyrical/share/std_msgs/",
+    "builtin_interfaces:/opt/ros/lyrical/share/builtin_interfaces/"
+  ]
+}

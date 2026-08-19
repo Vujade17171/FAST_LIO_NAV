@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_files("/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/src/navigation2/nav2_msgs" FILES "/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/build/nav2_msgs/rosidl_adapter/nav2_msgs/action/FollowGPSWaypoints.idl" "DESTINATION" "share/nav2_msgs/action")

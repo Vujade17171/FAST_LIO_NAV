@@ -1,0 +1,38 @@
+# =====================================================================
+# terrain_node 参数配置 (点云→坡度→可通行性图)
+# 文件: ws_livox/src/terrain_node/config/terrain.yaml
+# 修改后必须重新编译才生效:
+#   cd ~/ws_livox && source /opt/ros/lyrical/setup.bash && \
+#   source install/setup.bash && source ~/nav2_ws/install/setup.bash && \
+#   colcon build --packages-select terrain_node --symlink-install
+# 然后重启: ros2 run terrain_node terrain_node --ros-args \
+#   --params-file ~/ws_livox/src/terrain_node/config/terrain.yaml
+# =====================================================================
+# ★★★ 最常改的两个参数 ★★★
+#   1. max_slope_deg   : 车最大爬坡角度, 超过判为障碍绕行 (先按 10°, 实测后调)
+#   2. obstacle_min_height: 高于地面多少算障碍物 (车越障能力强可调大)
+# 其余参数一般不用动。
+# =====================================================================
+
+terrain_node:
+  ros__parameters:
+    # ---- 输入输出(一般不动) ----
+    cloud_topic: /cloud_registered   # 输入: FAST-LIO 全局点云
+    map_frame: map                   # 输出坐标系 (与 Nav2 global_costmap 一致)
+    publish_rate: 0.5                # 可通行性图发布频率 Hz (调低减少闪烁, 1Hz 足够)
+
+    # ---- 地图范围(一般不动) ----
+    map_width: 40.0                  # 可通行性图宽度 m
+    map_height: 40.0                 # 可通行性图高度 m
+    resolution: 0.1                  # 栅格分辨率 m (0.1=10cm一格, 越小越精细越费CPU)
+    max_range: 30.0                  # 有效感知范围 m (超过该距离的点忽略)
+
+    # ---- ★★ 地形判定(按车实际能力调) ★★ ----
+    max_slope_deg: 25.0              # 最大可通行坡度(度)
+                                     #   ≤该值: 标"可通行", 路径直接穿过(缓坡)
+                                     #   >该值: 标"障碍", 自动绕行(陡坡/台阶/墙)
+                                     #   调小=更保守(更容易绕行), 调大=更激进(敢爬更陡)
+    obstacle_min_height: 0.25        # 高于"局部地面"该值以上 → 算障碍点(m)
+                                     #   作用是滤掉地面/坡面点, 只留凸起障碍(石头/人/高台阶)
+                                     #   车越障能力强可调大(如0.15), 想更警惕可调小(如0.08)
+    z_ground_offset: 0.05            # 地面基准偏移 m (一般不动)

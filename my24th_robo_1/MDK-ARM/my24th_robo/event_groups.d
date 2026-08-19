@@ -1,0 +1,15 @@
+my24th_robo\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c
+my24th_robo\event_groups.o: D:\keil\ARM\ARMCC\Bin\..\include\stdlib.h
+my24th_robo\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+my24th_robo\event_groups.o: D:\keil\ARM\ARMCC\Bin\..\include\stddef.h
+my24th_robo\event_groups.o: D:\keil\ARM\ARMCC\Bin\..\include\stdint.h
+my24th_robo\event_groups.o: ../Core/Inc/FreeRTOSConfig.h
+my24th_robo\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+my24th_robo\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+my24th_robo\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+my24th_robo\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+my24th_robo\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+my24th_robo\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+my24th_robo\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+my24th_robo\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+my24th_robo\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h

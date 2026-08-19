@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_files("/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/src/navigation2/nav2_dwb_controller/nav_2d_msgs" FILES "/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/build/nav_2d_msgs/rosidl_generator_type_description/nav_2d_msgs/msg/Twist2D32.json" "DESTINATION" "share/nav_2d_msgs/msg")

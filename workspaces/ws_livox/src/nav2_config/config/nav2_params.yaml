@@ -1,0 +1,317 @@
+# =====================================================================
+# Nav2 参数配置 (FAST-LIO + terrain_node 斜坡导航, DWB 全向控制)
+# 文件: ws_livox/src/nav2_config/config/nav2_params.yaml
+# 修改后必须重新编译才生效:
+#   cd ~/ws_livox && source /opt/ros/lyrical/setup.bash && \
+#   source install/setup.bash && source ~/nav2_ws/install/setup.bash && \
+#   colcon build --packages-select nav2_config --symlink-install
+# 然后重启: ros2 launch nav2_config navigation.launch.py
+# =====================================================================
+# ★★★ 最常改的三个地方 ★★★
+#   1. 车的范围: 搜索 robot_radius(有两处, local+global), 按车体实际改
+#   2. 最大速度: 搜索 max_vel_x / max_vel_y / max_vel_theta (FollowPath 段)
+#   3. 膨胀半径: 搜索 inflation_radius (local/global costmap 各一处)
+# 其余参数一般不用动, 以下注释说明各参数含义供按需调整。
+bt_navigator:
+  ros__parameters:
+    global_frame: map
+    robot_base_frame: base_link
+    odom_topic: /odom
+    bt_loop_duration: 10
+    filter_duration: 0.3
+    default_server_timeout: 20
+    default_cancel_timeout: 50
+    wait_for_service_timeout: 1000
+    introspection_mode: "disabled"
+    navigators: ["navigate_to_pose", "navigate_through_poses"]
+    navigate_to_pose:
+      plugin: "nav2_bt_navigator::NavigateToPoseNavigator"
+      enable_groot_monitoring: false
+      groot_server_port: 1667
+      search_window: 2.0
+    navigate_through_poses:
+      plugin: "nav2_bt_navigator::NavigateThroughPosesNavigator"
+      enable_groot_monitoring: false
+      groot_server_port: 1669
+      search_window: 2.0
+    bt_search_directories:
+      - /home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/install/nav2_bt_navigator/share/nav2_bt_navigator/behavior_trees
+    # 默认树: navigate_to_pose_w_replanning_and_recovery.xml
+    error_code_name_prefixes:
+      - assisted_teleop
+      - backup
+      - compute_path
+      - follow_path
+      - nav_thru_poses
+      - nav_to_pose
+      - spin
+      - smoother
+      - wait
+
+controller_server:
+  ros__parameters:
+    controller_frequency: 20.0
+    costmap_update_timeout: 0.30
+    min_x_velocity_threshold: 0.001
+    min_y_velocity_threshold: 0.001
+    min_theta_velocity_threshold: 0.001
+    failure_tolerance: 0.3
+    progress_checker_plugins: ["progress_checker"]
+    goal_checker_plugins: ["general_goal_checker"]
+    controller_plugins: ["FollowPath"]
+    path_handler_plugins: ["PathHandler"]
+    use_realtime_priority: false
+    speed_limit_topic: "speed_limit"
+
+    progress_checker:
+      plugin: "nav2_controller::SimpleProgressChecker"
+      required_movement_radius: 0.3
+      movement_time_allowance: 10.0
+
+    general_goal_checker:
+      stateful: true
+      plugin: "nav2_controller::SimpleGoalChecker"
+      xy_goal_tolerance: 0.15
+      yaw_goal_tolerance: 0.1
+      path_length_tolerance: 1.0
+
+    PathHandler:
+      plugin: "nav2_controller::FeasiblePathHandler"
+      prune_distance: 2.0
+      enforce_path_inversion: false
+      enforce_path_rotation: false
+      inversion_xy_tolerance: 0.2
+      inversion_yaw_tolerance: 0.4
+      minimum_rotation_angle: 0.785
+      reject_unit_path: false
+
+    FollowPath:
+      plugin: "dwb_core::DWBLocalPlanner"
+      # 全向: 允许 vx/vy/wz 同时输出(匹配三轮全向底盘)
+      # ---- 速度限制(按车体能力改) ----
+      min_vel_x: -0.5          # 最小前进速度 m/s (负=可后退)
+      min_vel_y: -0.5          # 最小横移速度 m/s (负=可左移)
+      max_vel_x: 1.0           # ★最大前进速度 m/s, 全向底盘建议 0.8~1.5
+      max_vel_y: 1.0           # ★最大横移速度 m/s (三轮全向)
+      max_vel_theta: 1.5       # ★最大自转角速度 rad/s (~1.0~2.0)
+      min_speed_xy: 0.0
+      max_speed_xy: 1.5
+      # ---- 加速度限制(调大=起步快但冲击大) ----
+      acc_lim_x: 1.0           # x 加速度 m/s²
+      acc_lim_y: 1.0           # y 加速度 m/s²
+      acc_lim_theta: 2.0       # 角加速度 rad/s²
+      # ---- 到达判定(到点多近算"到了") ----
+      xy_goal_tolerance: 0.15  # 位置容差 m, 精度要求高就调小(如 0.1)
+      yaw_goal_tolerance: 0.1  # 朝向容差 rad
+      trans_stopped_velocity: 0.05
+      short_circuit_trajectory_evaluation: true
+      forward_prune_distance: 2.5
+      transform_tolerance: 0.2
+      critics: ["RotateToGoal", "Oscillation", "BaseObstacle", "GoalAlign", "PathAlign", "PathDist", "GoalDist"]
+      BaseObstacle:
+        plugin: "dwb_critics::BaseObstacle"
+      Oscillation:
+        plugin: "dwb_critics::Oscillation"
+      RotateToGoal:
+        plugin: "dwb_critics::RotateToGoal"
+      GoalAlign:
+        plugin: "dwb_critics::GoalAlign"
+      GoalDist:
+        plugin: "dwb_critics::GoalDist"
+      PathAlign:
+        plugin: "dwb_critics::PathAlign"
+      PathDist:
+        plugin: "dwb_critics::PathDist"
+
+local_costmap:
+  local_costmap:
+    ros__parameters:
+      update_frequency: 5.0
+      publish_frequency: 2.0
+      global_frame: odom
+      robot_base_frame: base_link
+      rolling_window: true
+      width: 6
+      height: 6
+      resolution: 0.05
+      # ★★★ 车的半径(m) 必改! 量车体长L宽W, 外接圆≈√((L/2)²+(W/2)²), 取大一点留余量
+      # 例: 0.7x0.6m 车 → √(0.35²+0.3²)≈0.46 → 填 0.5
+      # 想用矩形足迹: 删掉本行, 改用 footprint: "[[-0.35,-0.35],[-0.35,0.35],[0.35,0.35],[0.35,-0.35]]"
+      robot_radius: 0.35
+      transform_tolerance: 2.0
+      plugins: ["voxel_layer", "inflation_layer"]
+      inflation_layer:
+        plugin: "nav2_costmap_2d::InflationLayer"
+        cost_scaling_factor: 3.0
+        # 障碍膨胀半径(m): 车离障碍保持的安全距离, ≈ 车半径 + 0.1~0.2
+        inflation_radius: 0.4
+      voxel_layer:
+        plugin: "nav2_costmap_2d::VoxelLayer"
+        enabled: true
+        publish_voxel_map: false
+        origin_z: 0.0
+        z_resolution: 0.1
+        z_voxels: 16
+        max_obstacle_height: 1.0
+        mark_threshold: 0
+        observation_sources: obstacle_cloud
+        obstacle_cloud:
+          topic: /obstacle_cloud       # terrain_node 过滤后的点云(坡面已剔除)
+          sensor_frame: map
+          data_type: PointCloud2
+          clearing: true
+          marking: true
+          max_obstacle_height: 1.0
+          min_obstacle_height: 0.12
+      always_send_full_costmap: true
+      introspection_mode: "disabled"
+
+global_costmap:
+  global_costmap:
+    ros__parameters:
+      update_frequency: 2.0
+      publish_frequency: 1.0
+      global_frame: map
+      robot_base_frame: base_link
+      # ★★★ 车的半径(m) 同上, 两处要保持一致
+      robot_radius: 0.35
+      transform_tolerance: 2.0
+      width: 40
+      height: 40
+      resolution: 0.1
+      track_unknown_space: true
+      plugins: ["static_layer", "obstacle_layer", "inflation_layer"]
+      obstacle_layer:
+        plugin: "nav2_costmap_2d::ObstacleLayer"
+        enabled: true
+        observation_sources: obstacle_cloud
+        obstacle_cloud:
+          topic: /obstacle_cloud
+          sensor_frame: map
+          data_type: PointCloud2
+          clearing: true
+          marking: true
+          max_obstacle_height: 1.0
+          min_obstacle_height: 0.12
+      static_layer:
+        plugin: "nav2_costmap_2d::StaticLayer"
+        map_subscribe_transient_local: true    # map_server 发 transient local
+        map_topic: /map                        # map_server 加载的静态地图
+      inflation_layer:
+        plugin: "nav2_costmap_2d::InflationLayer"
+        cost_scaling_factor: 3.0
+        # 全局膨胀半径(m), 可略大于局部, 让全局路径提前绕障
+        inflation_radius: 0.5
+      always_send_full_costmap: true
+      introspection_mode: "disabled"
+
+planner_server:
+  ros__parameters:
+    allow_partial_planning: false
+    expected_planner_frequency: 2.0
+    planner_plugins: ["GridBased"]
+    costmap_update_timeout: 1.0
+    introspection_mode: "disabled"
+    GridBased:
+      plugin: "nav2_navfn_planner::NavfnPlanner"
+      tolerance: 0.5
+      use_astar: true
+      max_cycles_factor: 4
+      allow_unknown: true
+
+smoother_server:
+  ros__parameters:
+    smoother_plugins: ["simple_smoother"]
+    simple_smoother:
+      plugin: "nav2_smoother::SimpleSmoother"
+      tolerance: 1.0e-10
+      max_its: 1000
+      refinement_num: 2
+      enforce_path_inversion: false
+      do_refinement: true
+
+behavior_server:
+  ros__parameters:
+    local_costmap_topic: local_costmap/costmap_raw
+    global_costmap_topic: global_costmap/costmap_raw
+    local_footprint_topic: local_costmap/published_footprint
+    global_footprint_topic: global_costmap/published_footprint
+    cycle_frequency: 10.0
+    behavior_plugins: ["spin", "backup", "drive_on_heading", "wait"]
+    spin:
+      plugin: "nav2_behaviors::Spin"
+    backup:
+      plugin: "nav2_behaviors::BackUp"
+      acceleration_limit: 2.5
+      deceleration_limit: -2.5
+      minimum_speed: 0.10
+    drive_on_heading:
+      plugin: "nav2_behaviors::DriveOnHeading"
+      acceleration_limit: 2.5
+      deceleration_limit: -2.5
+      minimum_speed: 0.10
+    wait:
+      plugin: "nav2_behaviors::Wait"
+    local_frame: odom
+    global_frame: map
+    robot_base_frame: base_link
+    transform_tolerance: 0.1
+    simulate_ahead_time: 2.0
+    max_rotational_vel: 1.0
+    min_rotational_vel: 0.4
+    rotational_acc_lim: 3.2
+
+velocity_smoother:
+  ros__parameters:
+    smoothing_frequency: 20.0
+    scale_velocities: false
+    feedback: "OPEN_LOOP"
+    max_velocity: [1.0, 1.0, 1.5]
+    min_velocity: [-0.5, -0.5, -1.5]
+    max_accel: [1.0, 1.0, 2.0]
+    max_decel: [-1.0, -1.0, -2.0]
+    odom_topic: /odom
+    odom_duration: 0.1
+    deadband_velocity: [0.0, 0.0, 0.0]
+    velocity_timeout: 1.0
+
+collision_monitor:
+  ros__parameters:
+    enabled: true
+    base_frame_id: "base_link"
+    odom_frame_id: "odom"
+    cmd_vel_in_topic: "cmd_vel_smoothed"
+    cmd_vel_out_topic: "cmd_vel"
+    state_topic: "collision_monitor_state"
+    transform_tolerance: 0.2
+    source_timeout: 1.0
+    base_shift_correction: true
+    stop_pub_timeout: 2.0
+    polygons: ["FootprintApproach"]
+    FootprintApproach:
+      type: "polygon"
+      action_type: "approach"
+      footprint_topic: "local_costmap/published_footprint"
+      time_before_collision: 1.2
+      simulation_time_step: 0.1
+      min_points: 6
+      visualize: false
+      enabled: true
+    observation_sources: ["obstacle_cloud"]
+    obstacle_cloud:
+      type: "pointcloud"
+      topic: "/obstacle_cloud"
+      min_height: 0.15
+      max_height: 1.0
+      enabled: true
+
+waypoint_follower:
+  ros__parameters:
+    loop_rate: 20
+    stop_on_failure: false
+    introspection_mode: "disabled"
+    waypoint_task_executor_plugin: "wait_at_waypoint"
+    wait_at_waypoint:
+      plugin: "nav2_waypoint_follower::WaitAtWaypoint"
+      enabled: true
+      waypoint_pause_duration: 200
