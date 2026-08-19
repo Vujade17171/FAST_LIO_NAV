@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_files("/home/vujade17171/prj/FAST_LIO_NAV/workspaces/ws_livox/src/fastlio_tf_bridge" FILES "/home/vujade17171/prj/FAST_LIO_NAV/workspaces/ws_livox/build/fastlio_tf_bridge/ament_cmake_index/share/ament_index/resource_index/packages/fastlio_tf_bridge" "DESTINATION" "share/ament_index/resource_index/packages")

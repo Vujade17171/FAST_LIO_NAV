@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_files("/home/vujade17171/prj/FAST_LIO_NAV/workspaces/ws_livox/src/FAST_LIO_ROS2" FILES "/home/vujade17171/prj/FAST_LIO_NAV/workspaces/ws_livox/build/fast_lio/rosidl_adapter/fast_lio/msg/Pose6D.idl" "DESTINATION" "share/fast_lio/msg")

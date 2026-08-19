@@ -1,1 +1,0 @@
-/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/build/nav_2d_msgs/rosidl_generator_rs/nav_2d_msgs/rust/src/msg.rs

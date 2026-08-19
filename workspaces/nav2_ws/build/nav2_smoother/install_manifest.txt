@@ -1,5 +1,0 @@
-/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/install/nav2_smoother/lib/libsmoother_server_core.so
-/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/install/nav2_smoother/lib/libsimple_smoother.so
-/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/install/nav2_smoother/lib/libsavitzky_golay_smoother.so
-/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/install/nav2_smoother/share/nav2_smoother/cmake/smoother_server_coreExport.cmake
-/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/install/nav2_smoother/share/nav2_smoother/cmake/smoother_server_coreExport-release.cmake

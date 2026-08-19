@@ -1,1 +1,0 @@
-/home/vujade17171/prj/FAST_LIO_NAV/workspaces/ws_livox/src/livox_ros_driver2/launch_ROS2/rviz_MID360s_launch.py

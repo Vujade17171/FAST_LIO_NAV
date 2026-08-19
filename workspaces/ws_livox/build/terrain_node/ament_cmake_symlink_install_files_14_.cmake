@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_files("/home/vujade17171/prj/FAST_LIO_NAV/workspaces/ws_livox/src/terrain_node" FILES "/home/vujade17171/prj/FAST_LIO_NAV/workspaces/ws_livox/src/terrain_node/package.xml" "DESTINATION" "share/terrain_node")

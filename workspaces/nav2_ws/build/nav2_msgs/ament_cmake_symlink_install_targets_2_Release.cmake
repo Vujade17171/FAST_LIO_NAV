@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_targets("TARGET_FILES" "/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/build/nav2_msgs/rosidl_generator_py/nav2_msgs/nav2_msgs_s__rosidl_typesupport_c.so" "TARGETS" "nav2_msgs_s__rosidl_typesupport_c" "DESTINATION" "lib/python3.14/site-packages/nav2_msgs")

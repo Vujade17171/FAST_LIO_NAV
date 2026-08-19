@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_files("/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/src/navigation2/nav2_map_server" FILES "/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/build/nav2_map_server/ament_cmake_export_libraries/ament_cmake_export_libraries-extras.cmake" "DESTINATION" "share/nav2_map_server/cmake")

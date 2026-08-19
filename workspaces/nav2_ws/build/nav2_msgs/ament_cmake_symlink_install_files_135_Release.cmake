@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_files("/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/src/navigation2/nav2_msgs" FILES "/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/src/navigation2/nav2_msgs/msg/VoxelGrid.msg" "DESTINATION" "share/nav2_msgs/msg")

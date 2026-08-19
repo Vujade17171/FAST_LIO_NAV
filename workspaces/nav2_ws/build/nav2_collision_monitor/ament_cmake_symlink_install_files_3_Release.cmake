@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_files("/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/src/navigation2/nav2_collision_monitor" FILES "/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/build/nav2_collision_monitor/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/nav2_collision_monitor" "DESTINATION" "share/ament_index/resource_index/parent_prefix_path")

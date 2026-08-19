@@ -1,9 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/vujade17171/prj/FAST_LIO_NAV/workspaces/ws_livox/build/fast_lio/cmake_install.cmake",
-		"/home/vujade17171/prj/FAST_LIO_NAV/workspaces/ws_livox/build/fast_lio/fast_lio__py/cmake_install.cmake",
-		"/home/vujade17171/prj/FAST_LIO_NAV/workspaces/ws_livox/build/fast_lio/fast_lio__rs/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

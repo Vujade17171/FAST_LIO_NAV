@@ -1,5 +1,0 @@
-source;share/fastlio_tf_bridge/local_setup.bash
-source;share/fastlio_tf_bridge/local_setup.dsv
-source;share/fastlio_tf_bridge/local_setup.fish
-source;share/fastlio_tf_bridge/local_setup.sh
-source;share/fastlio_tf_bridge/local_setup.zsh

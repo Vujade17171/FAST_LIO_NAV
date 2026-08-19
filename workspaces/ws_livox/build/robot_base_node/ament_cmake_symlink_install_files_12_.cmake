@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_files("/home/vujade17171/prj/FAST_LIO_NAV/workspaces/ws_livox/src/robot_base_node" FILES "/home/vujade17171/prj/FAST_LIO_NAV/workspaces/ws_livox/build/robot_base_node/ament_cmake_index/share/ament_index/resource_index/packages/robot_base_node" "DESTINATION" "share/ament_index/resource_index/packages")

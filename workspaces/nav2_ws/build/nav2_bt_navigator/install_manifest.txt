@@ -1,5 +1,0 @@
-/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/install/nav2_bt_navigator/lib/libbt_navigator_core.so
-/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/install/nav2_bt_navigator/lib/libnav2_navigate_to_pose_navigator.so
-/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/install/nav2_bt_navigator/lib/libnav2_navigate_through_poses.so
-/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/install/nav2_bt_navigator/share/nav2_bt_navigator/cmake/export_bt_navigator_coreExport.cmake
-/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/install/nav2_bt_navigator/share/nav2_bt_navigator/cmake/export_bt_navigator_coreExport-release.cmake

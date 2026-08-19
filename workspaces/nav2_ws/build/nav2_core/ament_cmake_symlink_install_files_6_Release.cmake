@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_files("/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/src/navigation2/nav2_core" FILES "/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/build/nav2_core/ament_cmake_environment_hooks/local_setup.bash" "DESTINATION" "share/nav2_core")

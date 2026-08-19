@@ -1,1 +1,0 @@
-/home/vujade17171/prj/FAST_LIO_NAV/workspaces/ws_livox/src/nav2_config/launch/navigation.launch.py

@@ -1,5 +1,0 @@
-source;share/nav2_config/local_setup.bash
-source;share/nav2_config/local_setup.dsv
-source;share/nav2_config/local_setup.fish
-source;share/nav2_config/local_setup.sh
-source;share/nav2_config/local_setup.zsh

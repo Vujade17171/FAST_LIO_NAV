@@ -1,1 +1,0 @@
-ament_cmake_symlink_install_files("/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/src/navigation2/nav2_dwb_controller/nav_2d_msgs" FILES "/home/vujade17171/prj/FAST_LIO_NAV/workspaces/nav2_ws/build/nav_2d_msgs/rosidl_cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake" "DESTINATION" "share/nav_2d_msgs/cmake")
