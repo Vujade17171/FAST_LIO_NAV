@@ -9,3 +9,25 @@
 *.a
 *.pyc
 __pycache__/
+
+# ===== Keil MDK-ARM 构建产物 =====
+my24th_robo_1/MDK-ARM/my24th_robo/
+*.uvoptx
+*.uvguix.*
+my24th_robo_1/MDK-ARM/startup_*.lst
+my24th_robo_1/MDK-ARM/RTE/_my24th_robo/RTE_Components.h
+my24th_robo_1/MDK-ARM/DebugConfig/
+
+# ===== VS Code =====
+.vscode/
+
+# ===== 录包/点云等大数据 =====
+*.bag
+*.bag.active
+*.db3
+*.pcd
+*.ply
+
+# ===== 系统文件 =====
+Thumbs.db
+.DS_Store
