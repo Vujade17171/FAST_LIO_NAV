@@ -1,0 +1,11 @@
+**/build/
+**/install/
+**/log/
+
+# 编译中间文件
+*.o
+*.so
+*.d
+*.a
+*.pyc
+__pycache__/
